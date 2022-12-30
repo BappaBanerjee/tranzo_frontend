@@ -1,0 +1,74 @@
+.about_section,
+.contact_section {
+    display: flex;
+    align-items: center;
+    min-height: 90vh;
+    color: #fff;
+}
+
+.about_image img {
+    height: 400px;
+}
+
+.about_content,
+.contact_content {
+    text-align: initial;
+    font-size: 20px;
+}
+
+.about_content_list,
+.contact_content_list {
+    margin-top: 12px;
+}
+
+.profile_image {
+    vertical-align: middle;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+}
+
+.contact_name {
+    font-size: 64px;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 576px) {
+    .about_image img {
+        height: 250px;
+    }
+
+    .about_content.col {
+        font-size: 15px;
+    }
+
+    .about_section {
+        min-height: 70vh;
+    }
+
+    /* contact */
+    .profile_image {
+        vertical-align: middle;
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        margin: 20px;
+    }
+
+    .contact_section {
+        min-height: 70vh;
+    }
+
+    .contact_content {
+        font-size: 15px;
+    }
+
+    .contact_name {
+        font-size: 40px;
+    }
+
+    .contact_links,
+    .contact_skills {
+        margin-top: 15px;
+    }
+}

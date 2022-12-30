@@ -1,0 +1,23 @@
+.nav_bar {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.208);
+}
+
+.navbar a {
+    color: white;
+}
+
+.nav_bar_title {
+    font-family: cursive;
+}
+
+.navbar-expand-lg .navbar-collapse {
+    justify-content: flex-end;
+}
+
+@media only screen and (max-width: 576px) {
+    .navbar_mob a {
+        border: 1px solid red;
+        display: none;
+    }
+}
