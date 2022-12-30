@@ -5,7 +5,7 @@ import TranzoNavbar from './components/TranzoNavbar';
 import About from "./components/about";
 import NotFound from "./components/notFound";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.js'
+import 'bootstrap/dist/js/bootstrap.bundle.js';
 import './App.css';
 import Transactions from "./components/Transactions";
 
