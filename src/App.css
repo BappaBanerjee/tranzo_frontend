@@ -9,7 +9,6 @@
 
 .area {
   background: #0c0032;
-  background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
   width: 100%;
   min-height: 100vh;
   position: fixed;
