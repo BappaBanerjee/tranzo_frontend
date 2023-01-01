@@ -22,8 +22,21 @@ const Contact = () => {
                 <div className="contact_links">
                     <h4>Social Links</h4>
                     <ul>
-                        <li>Github account : <a href="https://github.com/BappaBanerjee">https://github.com/BappaBanerjee</a></li>
-                        <li>LinkedIn Account : <a href="https://www.linkedin.com/in/bappa-banerjee-2aa670191/">https://www.linkedin.com/in/bappa-banerjee-2aa670191/</a> </li>
+                        <li>Github account :
+                            <a href="https://github.com/BappaBanerjee" target="_blank" rel="noreferrer">
+                                https://github.com/BappaBanerjee
+                            </a>
+                        </li>
+                        <li>LinkedIn Account :
+                            <a href="https://www.linkedin.com/in/bappa-banerjee-2aa670191/" target="_blank" rel="noreferrer">
+                                https://www.linkedin.com/in/bappa-banerjee-2aa670191/
+                            </a>
+                        </li>
+                        <li>Source Code :
+                            <a href="https://github.com/BappaBanerjee/Web3Transaction" target="_blank" rel="noreferrer">
+                                https://github.com/BappaBanerjee/Web3Transaction
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </Col>

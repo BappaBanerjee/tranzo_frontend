@@ -15,7 +15,6 @@ export const getAllTransaction = async () => {
             const data = await contract.getAllTransaction();
             return data;
         } catch (error) {
-            alert('No transaction as of now!')
             return [];
         }
 
@@ -24,31 +23,52 @@ export const getAllTransaction = async () => {
     }
 }
 
-export const addToBlockchain = async (data) => {
+export const transactAmount = async (data) => {
     console.log(data);
     if (typeof window.ethereum !== "undefined") {
-
         await requestAccount();
         const provider = new ethers.providers.Web3Provider(window.ethereum);
         const signer = provider.getSigner();
 
         // console.log(signer);
 
+        // ethers.utils.parseEther( value ) ⇒ BigNumbersource
+        // The equivalent to calling parseUnits(value, "ether").
+
         const contract = new ethers.Contract(contract_address, contract_abi, signer);
-        // const parsedAmount = ethers.utils.parseEther(data.amount);
+        // const parsedAmount = ethers.utils.parseEther("0.5");
+        let amount = data.amount.toString();
+        console.log(data.amount.toString());
 
-        const transaction = await contract.addToBlockchain(
-            data.receiver,
-            data.amount,
-            data.message,
-            data.keyword,
-            { value: ethers.utils.parseEther(data.amount) }
-        );
-
-        // await transaction.wait();
-        console.log(transaction);
+        try {
+            const transaction = await contract.transactAmount(
+                data.receiver,
+                data.message,
+                { value: ethers.utils.parseEther(data.amount) }
+            );
+            // await transaction.wait();
+            console.log(transaction);
+            const status = {
+                status: 200,
+                res: transaction
+            }
+            return status;
+        } catch (error) {
+            console.log(error);
+            const status = {
+                status: 404,
+                res: error
+            }
+            return status;
+        }
     } else {
-        console.log("install metamask u fellow")
+        const status = {
+            status: 404,
+            res: {
+                code: "No Wallet Found!!"
+            }
+        }
+        return status;
     }
 }
 

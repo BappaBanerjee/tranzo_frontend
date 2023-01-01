@@ -1,17 +1,28 @@
 import React, { useState } from 'react';
 import './css/trazo_form.css';
-import { addToBlockchain } from '../contract/functions';
+import { transactAmount } from '../contract/functions';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Spinner from 'react-bootstrap/Spinner';
 
 
 const TranzoForm = () => {
 
+    const [isLoading, setIsLoading] = useState(false);
     const [data, setdata] = useState({});
     const handleSubmit = async (event) => {
         event.preventDefault();
-        await addToBlockchain(data);
-        alert('Transaction is completed!');
+        setIsLoading(true);
+        const res = await transactAmount(data);
+        console.log(res);
+        if (res.status === 404) {
+            alert(res.res.code);
+        } else if (res.status === 200) {
+            alert("Transaction Submitted!!");
+        } else {
+            alert("Something Bad happened!! Try Later!!");
+        }
+        setIsLoading(false);
     }
 
     const handleChange = (event) => {
@@ -52,15 +63,20 @@ const TranzoForm = () => {
                         <input type="text" name="message" id="message" value={data.message || ""} className="form-control" onChange={handleChange} required />
 
                     </div>
-                    <div className="form-group">
-                        <label name="keyword">
-                            keyword:
-                        </label>
-                        <input type="text" id="keyword" name="keyword" value={data.keyword || ""} className="form-control" onChange={handleChange} required />
-
-                    </div>
                     <div className="form-group" id='submit_btn' >
-                        <button type="submit" value="Submit">Transact</button>
+                        <button type="submit" value="Submit">
+                            {
+                                isLoading ?
+                                    <Spinner
+                                        as="span"
+                                        animation="border"
+                                        size="sm"
+                                        role="status"
+                                        aria-hidden="true"
+                                    /> : "Transact"
+                            }
+
+                        </button>
                     </div>
                 </form>
             </Col>

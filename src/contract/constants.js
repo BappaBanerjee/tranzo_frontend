@@ -1,5 +1,5 @@
-export const contract_address = '0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512';
-// export const contract_address = '0xF05A67942eCfaF6EE5d862e479e49f9F75a35aDc'; //goerli testnet address
+// export const contract_address = '0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9';
+export const contract_address = '0x24be54DF17995788a034A41b4061cC6e18746d0F'; //goerli testnet address
 export const contract_abi = [
     {
         "anonymous": false,
@@ -33,44 +33,10 @@ export const contract_abi = [
                 "internalType": "uint256",
                 "name": "timestaamp",
                 "type": "uint256"
-            },
-            {
-                "indexed": false,
-                "internalType": "string",
-                "name": "keyword",
-                "type": "string"
             }
         ],
         "name": "Transfer",
         "type": "event"
-    },
-    {
-        "inputs": [
-            {
-                "internalType": "address payable",
-                "name": "receiver",
-                "type": "address"
-            },
-            {
-                "internalType": "uint256",
-                "name": "amount",
-                "type": "uint256"
-            },
-            {
-                "internalType": "string",
-                "name": "message",
-                "type": "string"
-            },
-            {
-                "internalType": "string",
-                "name": "keyword",
-                "type": "string"
-            }
-        ],
-        "name": "addToBlockchain",
-        "outputs": [],
-        "stateMutability": "payable",
-        "type": "function"
     },
     {
         "inputs": [],
@@ -102,11 +68,6 @@ export const contract_abi = [
                         "internalType": "uint256",
                         "name": "timestamp",
                         "type": "uint256"
-                    },
-                    {
-                        "internalType": "string",
-                        "name": "keyword",
-                        "type": "string"
                     }
                 ],
                 "internalType": "struct Tranzo.TransferStruct[]",
@@ -128,6 +89,24 @@ export const contract_abi = [
             }
         ],
         "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address payable",
+                "name": "receiver",
+                "type": "address"
+            },
+            {
+                "internalType": "string",
+                "name": "message",
+                "type": "string"
+            }
+        ],
+        "name": "transactAmount",
+        "outputs": [],
+        "stateMutability": "payable",
         "type": "function"
     }
 ];
