@@ -4,7 +4,6 @@
 }
 
 .tranzo-contents {
-    /* border: 1px solid red; */
     min-height: 92vh;
     display: flex;
     align-items: center;
@@ -13,14 +12,10 @@
 }
 
 .tranzo-contents>.tranzo-texts {
-    /* border: 1px solid green; */
-    /* min-height: 80vh; */
-    /* min-width: 50%; */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: white;
 }
 
 .tranzo_title {
@@ -38,14 +33,11 @@
 }
 
 .tranzo-contents>.tranzo-form {
-    /* border: 1px solid green; */
     min-height: 80vh;
-    /* min-width: 50%; */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: white;
     text-transform: capitalize;
 }
 
@@ -63,7 +55,6 @@
 }
 
 .form-group {
-    /* border: 1px solid red; */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -93,7 +84,6 @@
     border-radius: 15px;
     border: none;
     background-color: #190061;
-    color: #fff;
 }
 
 #submit_btn {

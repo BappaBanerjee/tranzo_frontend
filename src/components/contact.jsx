@@ -32,9 +32,14 @@ const Contact = () => {
                                 https://www.linkedin.com/in/bappa-banerjee-2aa670191/
                             </a>
                         </li>
-                        <li>Source Code :
-                            <a href="https://github.com/BappaBanerjee/Web3Transaction" target="_blank" rel="noreferrer">
-                                https://github.com/BappaBanerjee/Web3Transaction
+                        <li>Smart Contract Source Code :
+                            <a href="https://github.com/BappaBanerjee/smartContracts/tree/main/contracts" target="_blank" rel="noreferrer">
+                                https://github.com/BappaBanerjee/smartContracts/tree/main/contracts
+                            </a>
+                        </li>
+                        <li>Frontend Source Code :
+                            <a href="https://github.com/BappaBanerjee/tranzo_frontend" target="_blank" rel="noreferrer">
+                                https://github.com/BappaBanerjee/tranzo_frontend
                             </a>
                         </li>
                     </ul>

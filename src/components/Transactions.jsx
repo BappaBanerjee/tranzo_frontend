@@ -6,10 +6,12 @@ import './css/tranzo_transaction.css'
 
 const Transactions = () => {
     const [transactions, setTransactions] = useState([])
+    const [isLoading, setIsLoading] = useState(true);
 
     const test = async () => {
         const data = await getAllTransaction();
         setTransactions(data);
+        setIsLoading(false);
     }
 
     useEffect(() => {
@@ -19,36 +21,39 @@ const Transactions = () => {
     return (
         <div className="transaction_lists">
             {
-                transactions.length === 0 ?
-                    <h1>No Such transaction as of Noted as of now in the chain!!</h1>
+                isLoading ?
+                    <h1>Fetching Data!!! Please Wait.....</h1>
                     :
-                    <Table bordered>
-                        <thead>
-                            <tr>
-                                <th>Sender</th>
-                                <th>Receiver</th>
-                                <th>Value</th>
-                                <th>Message</th>
-                                <th>Time</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {transactions.map((value) => {
-                                const blockTime = value.timestamp.toNumber();
-                                const time = new Date(blockTime * 1000);
-                                return (
-                                    <tr className='transaction_details'>
-                                        <td>{value.sender}</td>
-                                        <td>{value.receiver}</td>
-                                        <td>{value.amount.toNumber()}</td>
-                                        <td>{value.message}</td>
-                                        <td>{time.getDate() + '/' + (time.getMonth() + 1) + '/' + time.getFullYear()}</td>
-                                    </tr>
-                                )
-                            }
-                            )}
-                        </tbody>
-                    </Table>
+                    transactions.length === 0 ?
+                        <h1>No transaction Noted as of now, in the chain!!</h1>
+                        :
+                        <Table bordered>
+                            <thead>
+                                <tr>
+                                    <th>Sender</th>
+                                    <th>Receiver</th>
+                                    <th>Value</th>
+                                    <th>Message</th>
+                                    <th>Time</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {transactions.map((value) => {
+                                    const blockTime = value.timestamp.toNumber();
+                                    const time = new Date(blockTime * 1000);
+                                    return (
+                                        <tr className='transaction_details'>
+                                            <td>{value.sender}</td>
+                                            <td>{value.receiver}</td>
+                                            <td>{value.amount.toNumber()}</td>
+                                            <td>{value.message}</td>
+                                            <td>{time.getDate() + '/' + (time.getMonth() + 1) + '/' + time.getFullYear()}</td>
+                                        </tr>
+                                    )
+                                }
+                                )}
+                            </tbody>
+                        </Table>
             }
 
         </div>
