@@ -14,7 +14,6 @@ const TranzoForm = () => {
         event.preventDefault();
         setIsLoading(true);
         const res = await transactAmount(data);
-        console.log(res);
         if (res.status === 404) {
             alert(res.res.code);
         } else if (res.status === 200) {

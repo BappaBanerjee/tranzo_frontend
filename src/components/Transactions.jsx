@@ -10,7 +10,6 @@ const Transactions = () => {
     const test = async () => {
         const data = await getAllTransaction();
         setTransactions(data);
-        console.log(data)
     }
 
     useEffect(() => {
@@ -37,7 +36,6 @@ const Transactions = () => {
                             {transactions.map((value) => {
                                 const blockTime = value.timestamp.toNumber();
                                 const time = new Date(blockTime * 1000);
-                                console.log(time);
                                 return (
                                     <tr className='transaction_details'>
                                         <td>{value.sender}</td>
