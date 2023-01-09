@@ -36,6 +36,7 @@ const TranzoForm = () => {
                 <div className="tranzo-heading">
                     <div className='tranzo_title'>Tranzo</div>
                     <div className='tranzo_subtitle'>Fast and secure Transaction!</div>
+                    <div className="network_name">Network : Goerli TestNet</div>
                     <div className='tranzo_'>Developed by : Bappa Banerjee</div>
                     <br></br>
                 </div>

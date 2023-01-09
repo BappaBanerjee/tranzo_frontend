@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { getAllTransaction } from '../contract/functions';
 import Table from 'react-bootstrap/Table';
 import './css/tranzo_transaction.css'
+import { ethers } from 'ethers';
 
 
 const Transactions = () => {
@@ -41,11 +42,12 @@ const Transactions = () => {
                                 {transactions.map((value) => {
                                     const blockTime = value.timestamp.toNumber();
                                     const time = new Date(blockTime * 1000);
+                                    const amount = ethers.utils.formatEther(value.amount);
                                     return (
                                         <tr className='transaction_details'>
                                             <td>{value.sender}</td>
                                             <td>{value.receiver}</td>
-                                            <td>{value.amount.toNumber()}</td>
+                                            <td>{amount} eth</td>
                                             <td>{value.message}</td>
                                             <td>{time.getDate() + '/' + (time.getMonth() + 1) + '/' + time.getFullYear()}</td>
                                         </tr>
